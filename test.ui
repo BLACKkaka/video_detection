@@ -105,8 +105,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>430</y>
+      <x>490</x>
+      <y>470</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -122,8 +122,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>430</y>
+      <x>450</x>
+      <y>470</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -139,8 +139,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>430</y>
+      <x>530</x>
+      <y>470</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -157,7 +157,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>430</y>
+      <y>470</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -170,24 +170,11 @@
       <normaloff>../../Downloads/icon_lastsong.png</normaloff>../../Downloads/icon_lastsong.png</iconset>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>430</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>430</y>
+      <x>570</x>
+      <y>470</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -626,7 +613,7 @@
      <string>输出报告</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QVideoWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>409</x>
@@ -644,6 +631,71 @@
       <width>401</width>
       <height>261</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>470</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="myVideoSlider" name="horizontalSlider_2">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>430</y>
+      <width>321</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>430</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Progress:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>430</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>470</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -719,6 +771,19 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">PyQt5.QtMultimediaWidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>myVideoSlider</class>
+   <extends>QSlider</extends>
+   <header>myvideoslider.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
