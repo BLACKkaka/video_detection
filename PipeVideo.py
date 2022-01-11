@@ -5,6 +5,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication
 
 from test import Ui_MainWindow
+from myCreateProject import myCreateProjects
 
 
 class myMainWindow(Ui_MainWindow, QMainWindow):
@@ -15,7 +16,7 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.widget)  # 父类继承的
         # 暂时绑定到“新建工程”按钮上
-        self.action.triggered.connect(self.openVideoFile)
+        self.action.triggered.connect(self.createProject)
         self.pushButton_2.clicked.connect(self.playVideo)       # play
         self.pushButton.clicked.connect(self.pauseVideo)       # pause
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
@@ -39,6 +40,7 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
 
     def pauseVideo(self):
         self.player.pause()
+
 
     def changeSlide(self, position):
         if not self.sld_video_pressed:  # 进度条被鼠标点击时不更新
@@ -67,6 +69,11 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
             self.label_17.setText("%.2f%%" % position)
         else:
             self.horizontalSlider_2.setValue(0)
+
+
+    def createProject(self):
+        dialog = myCreateProjects()
+        dialog.setupUi(myMainWindow)
 
     # def volumeChange(self, position):
     #     volume = round(position/self.sld_audio.maximum()*100)

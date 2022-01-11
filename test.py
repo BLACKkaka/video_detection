@@ -333,4 +333,4 @@ class Ui_MainWindow(object):
         self.action_4.setText(_translate("MainWindow", "导入信息"))
         self.action_5.setText(_translate("MainWindow", "开始预测"))
 from PyQt5.QtMultimediaWidgets import QVideoWidget
-from myvideoslider import myVideoSlider
+from myVideoSlider import myVideoSlider

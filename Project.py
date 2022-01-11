@@ -33,6 +33,4 @@ def createProject():
         projectsList = os.listdir("./projects/")
     print(len(projectsList))
 
-
-
 createProject()
