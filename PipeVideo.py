@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication
 
 from test import Ui_MainWindow
 from myCreateProject import myCreateProjects
+from Project import Project
 
 
 class myMainWindow(Ui_MainWindow, QMainWindow):
@@ -17,6 +18,8 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
         self.player.setVideoOutput(self.widget)  # 父类继承的
         # 暂时绑定到“新建工程”按钮上
         self.action.triggered.connect(self.createProject)
+        self.action_2.triggered.connect(self.selectProject)
+        self.action_3.triggered.connect(self.saveProject)
         self.pushButton_2.clicked.connect(self.playVideo)       # play
         self.pushButton.clicked.connect(self.pauseVideo)       # pause
         self.player.positionChanged.connect(self.changeSlide)  # change Slide
@@ -74,6 +77,21 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
     def createProject(self):
         dialog = myCreateProjects()
         dialog.setupUi(myMainWindow)
+
+    #2022-3-8 选择项目打开
+    def selectProject(self):
+        fileName1, filetype = QFileDialog.getOpenFileName(self,"选取文件","./projects/","All Files (*);;Text Files (*.txt)")
+        with open(fileName1,'r') as f:
+            for item in f.readlines():
+                pass
+            #这里看看如何做反序列化
+
+    #2022-3-8 调用序列化方法，将项目保存到文件中
+    def saveProject(self):
+        # projectName = getnamefromlist
+        projectName = Project()
+        projectName.Serialization()
+
 
     # def volumeChange(self, position):
     #     volume = round(position/self.sld_audio.maximum()*100)

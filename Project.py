@@ -3,7 +3,9 @@ import pickle
 
 from Video import Video
 
-class Projects:
+class Project:
+    def __init__(self):
+        pass
     def __init__(self, prj_name, vdo_list):
         self.videoList = []
         self.name = prj_name
