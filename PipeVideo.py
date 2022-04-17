@@ -16,7 +16,6 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
         self.sld_video_pressed = False  #判断当前进度条识别否被鼠标点击
         self.player = QMediaPlayer()
         self.player.setVideoOutput(self.widget)  # 父类继承的
-        # 暂时绑定到“新建工程”按钮上
         self.action.triggered.connect(self.createProject)
         self.action_2.triggered.connect(self.selectProject)
         self.action_3.triggered.connect(self.saveProject)
@@ -28,6 +27,8 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
         self.horizontalSlider_2.sliderPressed.connect(self.pressSlider)
         self.horizontalSlider_2.sliderMoved.connect(self.moveSlider)   # 进度条拖拽跳转
         self.horizontalSlider_2.ClickedValue.connect(self.clickedSlider)  # 进度条点击跳转
+        # 子窗口们
+        self.crtPrj = myCreateProjects()
         # 注释掉声音控件，因为管道视频没有声音
         # self.horizontalSlider.valueChanged.connect(self.volumeChange)
 
@@ -43,7 +44,6 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
 
     def pauseVideo(self):
         self.player.pause()
-
 
     def changeSlide(self, position):
         if not self.sld_video_pressed:  # 进度条被鼠标点击时不更新
@@ -75,8 +75,8 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
 
 
     def createProject(self):
-        dialog = myCreateProjects()
-        dialog.setupUi(myMainWindow)
+        self.crtPrj.show()
+
 
     #2022-3-8 选择项目打开
     def selectProject(self):
@@ -100,6 +100,6 @@ class myMainWindow(Ui_MainWindow, QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    vieo_gui = myMainWindow()
-    vieo_gui.show()
+    video_gui = myMainWindow()
+    video_gui.show()
     sys.exit(app.exec_())
