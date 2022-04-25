@@ -613,26 +613,6 @@
      <string>输出报告</string>
     </property>
    </widget>
-   <widget class="QVideoWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>409</x>
-      <y>19</y>
-      <width>441</width>
-      <height>401</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget_2" native="true">
-    <property name="geometry">
-     <rect>
-      <x>860</x>
-      <y>590</y>
-      <width>401</width>
-      <height>261</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
@@ -698,6 +678,32 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>411</x>
+      <y>24</y>
+      <width>441</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>861</x>
+      <y>594</y>
+      <width>391</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -705,7 +711,7 @@
      <x>0</x>
      <y>0</y>
      <width>1267</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -772,12 +778,6 @@
   </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>QVideoWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">PyQt5.QtMultimediaWidgets</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>myVideoSlider</class>
    <extends>QSlider</extends>
